@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Finance App</title>
+  <style>
+    /* CSS Styles */
+    :root {
+      --blue: #1e90ff;
+      --green: #2ecc71;
+      --orange: #f39c12;
+      --teal: #008080;
+      --dark-grey: #333;
+      --charcoal: #222;
+      --off-white: #eee;
+      --light-grey: #f4f4f4;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-grey);
+      color: var(--dark-grey);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: var(--charcoal);
+      color: var(--off-white);
+    }
+
+    header {
+      background-color: var(--blue);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 150px;
+      border-radius: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--light-grey);
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .dark-mode section {
+      background-color: var(--dark-grey);
+      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    }
+
+    h1, h2 {
+      color: var(--blue);
+      transition: color 0.3s;
+    }
+
+    .dark-mode h1, .dark-mode h2 {
+      color: var(--green);
+    }
+
+    .widget {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
+
+    .dark-mode .widget {
+      border-color: var(--off-white);
+    }
+
+    .widget h2 {
+      margin-top: 0;
+      color: var(--teal);
+    }
+
+    .dark-mode .widget h2 {
+      color: var(--orange);
+    }
+
+    .widget p {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .widget img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--dark-grey);
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    .dark-mode footer {
+      background-color: var(--charcoal);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul li {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://images.unsplash.com/photo-1607861792431-2555505c0c56" alt="App Logo">
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#expenses">Expenses</a></li>
+        <li><a href="#budgets">Budgets</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#insights">Insights</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dashboard">
+      <h1>Welcome, User!</h1>
+      <div class="widget">
+        <h2>Total Expenses</h2>
+        <p>$2540.00</p>
+        <img src="https://picsum.photos/id/237/200/150" alt="Expenses Chart">
+      </div>
+      <div class="widget">
+          <h2>Remaining Budget</h2>
+          <p>$460.00</p>
+          <img src="https://picsum.photos/id/238/200/150" alt="Budget Chart">
+      </div>
+    </section>
+
+    <section id="expenses">
+      <h2>Track Your Expenses</h2>
+      <img src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9" alt="Expense Tracking" style="max-width: 100%; height: auto;">
+    </section>
+
+    <section id="budgets">
+      <h2>Manage Your Budgets</h2>
+      <img src="https://picsum.photos/id/240/200/150" alt="Budgeting">
+    </section>
+
+    <section id="goals">
+      <h2>Set Financial Goals</h2>
+      <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6d" alt="Financial Goals" style="max-width: 100%; height: auto;">
+    </section>
+
+    <section id="insights">
+      <h2>AI-Powered Insights</h2>
+      <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4" alt="AI Insights" style="max-width: 100%; height: auto;">
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Personal Finance App. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Dark Mode Toggle (Example)
+      const toggleDarkMode = () => {
+        document.body.classList.toggle('dark-mode');
+      };
+
+      // Dummy function for adding an expense (Example)
+      const addExpense = (amount, category) => {
+        console.log(`Expense Added: $${amount} for ${category}`);
+        // Here you would typically update the UI and any data structures
+      };
+
+      // Dummy function for setting a budget (Example)
+      const setBudget = (category, amount) => {
+        console.log(`Budget Set: $${amount} for ${category}`);
+        // Here you would typically update the UI and any data structures
+      };
+
+      // Example usage
+      toggleDarkMode(); // Call this based on user preference or system settings
+      addExpense(50, 'Groceries');
+      setBudget('Dining Out', 200);
+    });
+  </script>
+</body>
+</html>
